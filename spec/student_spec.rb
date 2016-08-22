@@ -84,8 +84,10 @@ describe "Student" do
   describe '#find_by_name' do
     it 'returns an instance of student that matches the name from the DB' do
       josh.save
+      # binding.pry
       josh_id = josh.id
       josh_from_db = Student.find_by_name("Josh")
+      # binding.pry
       expect(josh_from_db.name).to eq("Josh")
       expect(josh_from_db.grade).to eq("9th")
       expect(josh_from_db.id).to eq(josh_id)
